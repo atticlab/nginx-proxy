@@ -1,0 +1,14 @@
+version: '2'
+services:
+  nginx-proxy:
+    restart: always
+    container_name: nginx-proxy
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ../logs:/logs
+      - ./conf:/etc/nginx/conf.d/
+      - /vhosts/offline.device/public:/offline
+      - /vhosts/web-wallet:/wallet
+      - /vhosts/yellowpages/dist:/yellowpages
