@@ -9,5 +9,3 @@ services:
     volumes:
       - ./logs:/logs
       - ./conf:/etc/nginx/conf.d/
-      - /vhosts/yellowpages/dist:/yellowpages
-      - /vhosts/exchange:/exchange
