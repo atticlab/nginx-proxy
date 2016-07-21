@@ -7,8 +7,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ../logs:/logs
+      - ./logs:/logs
       - ./conf:/etc/nginx/conf.d/
-      - /vhosts/offline.device/public:/offline
-      - /vhosts/web-wallet:/wallet
       - /vhosts/yellowpages/dist:/yellowpages
+      - /vhosts/exchange:/exchange
