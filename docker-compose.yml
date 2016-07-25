@@ -1,11 +1,21 @@
 version: '2'
 services:
-  nginx-proxy:
+  nginx-reverse:
     restart: always
-    container_name: nginx-proxy
+    container_name: nginx-reverse
     image: nginx:latest
     ports:
       - "80:80"
     volumes:
       - ./logs:/logs
-      - ./conf:/etc/nginx/conf.d/
+      - ./conf/nginx:/etc/nginx/conf.d/
+  
+  haproxy:
+    restart: always
+    container_name: haproxy
+    image: haproxy:latest
+    ports:
+      - "7999:7999"
+    volumes:
+      - ./conf/haproxy:/usr/local/etc/haproxy/
+      

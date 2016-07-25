@@ -19,8 +19,8 @@ state:
 	docker-compose ps
 
 build:
-	docker-compose build --no-cache
-#	docker-compose build
+#	docker-compose build --no-cache
+	docker-compose build
 	docker-compose up -d
 
 attach:
