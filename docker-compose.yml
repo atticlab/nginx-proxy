@@ -2,17 +2,18 @@ version: '2'
 services:
   nginx-reverse:
     restart: always
-    container_name: nginx-reverse
+    container_name: smartmoney-reverse-nginx
     image: nginx:latest
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./logs:/logs
       - ./conf/nginx:/etc/nginx/conf.d/
   
   haproxy:
     restart: always
-    container_name: haproxy
+    container_name: smartmoney-reverse-haproxy
     image: haproxy:latest
     ports:
       - "7999:7999"
