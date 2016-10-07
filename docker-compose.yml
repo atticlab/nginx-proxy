@@ -17,6 +17,11 @@ services:
     image: haproxy:latest
     ports:
       - "7999:7999"
+      - "8098:8098"
+      - "8087:8087"
+      - "8099:8099"
+      - "4369:4369"
+      - "6000-6001:6000-6001"
     volumes:
       - ./conf/haproxy:/usr/local/etc/haproxy/
       
