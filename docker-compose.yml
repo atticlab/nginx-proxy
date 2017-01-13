@@ -13,17 +13,17 @@ services:
     env_file:
       - .env
 
-  haproxy:
-    restart: always
-    container_name: smartmoney-reverse-haproxy
-    image: haproxy:latest
-    ports:
-      - "7999:7999"
-      - "8098:8098"
-      - "8087:8087"
-      - "8099:8099"
-      - "8093:8093"
-      - "4369:4369"
-      - "6000-6001:6000-6001"
-    volumes:
-      - ./conf/haproxy:/usr/local/etc/haproxy/
+#  haproxy:
+#    restart: always
+#    container_name: smartmoney-reverse-haproxy
+#    image: haproxy:latest
+#    ports:
+#      - "7999:7999"
+#      - "8098:8098"
+#      - "8087:8087"
+#      - "8099:8099"
+#      - "8093:8093"
+#      - "4369:4369"
+#      - "6000-6001:6000-6001"
+#    volumes:
+#      - ./conf/haproxy:/usr/local/etc/haproxy/
