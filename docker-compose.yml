@@ -7,7 +7,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "8093:8093"
     volumes:
       - ./logs:/logs
     env_file:
