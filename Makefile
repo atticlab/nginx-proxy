@@ -19,7 +19,10 @@ state:
 	docker-compose ps
 
 build:
-#	docker-compose build --no-cache
+	@if [ ! -f ./.env ]; then\
+	  	read -p "Enter domain for all services (w/o port and protocol):" domain; echo "DOMAIN=$$domain" >> ./.env; \
+	  	read -p "Enter host of current server:" host; echo "HOST=$$host" >> ./.env; \
+	fi
 	docker-compose build
 	docker-compose up -d
 
