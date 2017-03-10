@@ -21,7 +21,9 @@ state:
 build:
 	@if [ ! -f ./.env ]; then\
 	  	read -p "Enter domain for all services (w/o port and protocol):" domain; echo "DOMAIN=$$domain" >> ./.env; \
-	  	read -p "Enter destination host for proxy pass:" host; echo "HOST=$$host" >> ./.env; \
+	  	read -p "Enter destination host for horizon proxy pass:" horizon_host; echo "HORIZON_NP_HOST=$$horizon_host" >> ./.env; \
+	  	read -p "Enter destination host for riak proxy pass:" riak_host; echo "RIAK_NP_HOST=$$riak_host" >> ./.env; \
+	  	read -p "Enter destination host for microservices proxy pass:" services_host; echo "SERVICES_NP_HOST=$$services_host" >> ./.env; \
 	fi
 	docker-compose build
 	docker-compose up -d
